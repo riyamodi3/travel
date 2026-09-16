@@ -1,0 +1,18 @@
+{
+  "test_id": "474e4f5b-e78f-45b9-9902-1323c11748e2",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "s-o-paolo-to-new-york-search-preserves-the-route-heading-and",
+  "commit_id": "d06fbe59-ba12-43d8-94d6-b29e08251caf",
+  "testcase_id": "01M2NNTHJV205S2NBM1EV03XMC",
+  "executions": [
+    {
+      "execution_id": "55fb6b2d-8b28-4e50-8132-edfb070d4305",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-16T18:01:03.374Z"
+    }
+  ]
+}

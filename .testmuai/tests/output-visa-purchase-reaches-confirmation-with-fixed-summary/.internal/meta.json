@@ -1,0 +1,18 @@
+{
+  "test_id": "721eb1de-94b3-4f30-a207-79b0af83b61d",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "visa-purchase-reaches-confirmation-with-fixed-summary",
+  "commit_id": "d4d074d3-66f1-4b71-8463-1b09af438034",
+  "testcase_id": "01M2NPBMFTA9JNNYSA3PR5E8CH",
+  "executions": [
+    {
+      "execution_id": "2a3decc3-06bd-4306-be19-7c256849a6c4",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-09-16T18:09:44.505Z"
+    }
+  ]
+}

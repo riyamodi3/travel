@@ -71,6 +71,12 @@ jobs:
           KANE_VAR_purchase_card_number_amex: ${{ secrets.PURCHASE_CARD_NUMBER_AMEX }}
           KANE_VAR_purchase_card_month: ${{ vars.PURCHASE_CARD_MONTH || '12' }}
           KANE_VAR_purchase_card_year: ${{ vars.PURCHASE_CARD_YEAR || '2030' }}
+          # Required by the tests designed from the corrected requirements.
+          # purchase_name must differ from purchase_name_on_card: one test asserts
+          # the confirmation page omits the submitted billing name, which is only
+          # an unambiguous check if the two names are distinguishable.
+          KANE_VAR_purchase_name: ${{ vars.PURCHASE_NAME || 'Alex Traveller' }}
+          KANE_VAR_start_url: ${{ vars.START_URL || 'https://blazedemo.com/' }}
         run: |
           kane-cli testrun run \
             --headless \

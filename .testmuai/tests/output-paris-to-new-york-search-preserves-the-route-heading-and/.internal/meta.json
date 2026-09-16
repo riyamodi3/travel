@@ -1,0 +1,18 @@
+{
+  "test_id": "a0a51f47-1b3c-408d-a97f-76bbb5a20db9",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "paris-to-new-york-search-preserves-the-route-heading-and",
+  "commit_id": "f5f51579-f81f-4608-be2a-ab9aa0581b2a",
+  "testcase_id": "01M2NN74DXBY2AFCETVZXFMGM4",
+  "executions": [
+    {
+      "execution_id": "e0a6209c-8e31-4eee-835d-fbf3f0f86740",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-09-16T17:52:08.374Z"
+    }
+  ]
+}

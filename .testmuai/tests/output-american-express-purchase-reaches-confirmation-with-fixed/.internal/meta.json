@@ -1,0 +1,18 @@
+{
+  "test_id": "6ecbe923-84cc-40ff-ae2e-fc3a5460ce13",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "american-express-purchase-reaches-confirmation-with-fixed",
+  "commit_id": "a04ce1c3-d5c8-41c0-b55b-4762aac1dc80",
+  "testcase_id": "01M2NPJB8KJB7VJ989XKFG88J6",
+  "executions": [
+    {
+      "execution_id": "0409727b-3c7b-442e-9150-e436f1d607ed",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-09-16T18:13:28.855Z"
+    }
+  ]
+}

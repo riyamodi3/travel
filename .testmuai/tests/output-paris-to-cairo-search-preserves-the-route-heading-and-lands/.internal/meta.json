@@ -1,0 +1,18 @@
+{
+  "test_id": "057fd0bb-f821-48cf-894f-d609d9f413d8",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "paris-to-cairo-search-preserves-the-route-heading-and-lands",
+  "commit_id": "05e57cb0-39d7-4858-8591-c2545a26f0a6",
+  "testcase_id": "01M2NMX5SNCE79RJ7R82M8HFWG",
+  "executions": [
+    {
+      "execution_id": "49f62e06-44b9-47bd-ac9f-70ffc7402d2a",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-16T17:46:01.377Z"
+    }
+  ]
+}

@@ -18,10 +18,16 @@ below as they actually are, not as a conventional booking flow would define them
 
 ## Flight Results Page
 
-- The reserve page lists available flights in a table with columns: Airline, Flight #, Departure Time, Arrival Time, and Price.
+- The reserve page lists available flights in a table whose column headers are, left to
+  right: "Choose", "Flight #", "Airline", "Departs: <departure city>", "Arrives:
+  <destination city>", and "Price". The two middle headers are route-dependent — a Paris to
+  Cairo search renders them as "Departs: Paris" and "Arrives: Cairo" — rather than static
+  "Departure Time" / "Arrival Time" labels. Observed for the Paris to Cairo route; the
+  substitution pattern is inferred from that single observation.
+- The page heading reads "Flights from <departure city> to <destination city>:" (observed as
+  "Flights from Paris to Cairo:").
 - Each row has a "Choose This Flight" button that proceeds to the purchase page. The purchase
   page does not carry that row's flight details through — see the Purchase Page section.
-- The selected departure and destination cities from the home page are reflected in the page heading.
 
 ## Purchase Page
 

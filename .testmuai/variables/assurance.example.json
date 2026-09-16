@@ -43,5 +43,15 @@
     "value": "2030",
     "secret": false,
     "description": "Card expiration year to submit on the purchase form in booking tests."
+  },
+  "purchase_name": {
+    "value": "Alex Traveller",
+    "secret": false,
+    "description": "Purchaser name to enter in the purchase-form Name field; keep it different from {{purchase_name_on_card}} so the confirmation omission check is unambiguous."
+  },
+  "start_url": {
+    "value": "https://blazedemo.com/",
+    "secret": false,
+    "description": "Base URL for the BlazeDemo web app entry page that these browser tests should open first."
   }
 }

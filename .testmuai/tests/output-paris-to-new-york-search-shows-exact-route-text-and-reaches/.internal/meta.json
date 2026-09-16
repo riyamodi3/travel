@@ -1,0 +1,18 @@
+{
+  "test_id": "54dafd0d-488a-400c-9b67-e2260476ccf6",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "paris-to-new-york-search-shows-exact-route-text-and-reaches",
+  "commit_id": "af691450-369b-4faa-9a6d-6e92ca0b70e8",
+  "testcase_id": "01M2NR2X983GZNGGDV1HGDXART",
+  "executions": [
+    {
+      "execution_id": "39e90926-d936-4bdf-b311-eb8a609c608a",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-16T18:40:52.297Z"
+    }
+  ]
+}

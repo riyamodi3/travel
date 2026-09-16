@@ -1,0 +1,18 @@
+{
+  "test_id": "6036cca5-f21d-4fb6-9ff3-50b18ae46803",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "s-o-paolo-to-cairo-search-shows-exact-route-text-and-reaches",
+  "commit_id": "739d6f46-88c8-428e-8cca-cd18bc999ad8",
+  "testcase_id": "01M2NRBHT0PS1C5KQNAG5R6ZDD",
+  "executions": [
+    {
+      "execution_id": "78435c53-38d6-4ef7-b8aa-f841e793da67",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-16T18:48:27.050Z"
+    }
+  ]
+}

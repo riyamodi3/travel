@@ -1,0 +1,18 @@
+{
+  "test_id": "eb6a7bbe-5ecb-4176-8f63-f091a8cf5421",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "s-o-paolo-to-new-york-purchase-keeps-the-fixed-tlv-to-sfo",
+  "commit_id": "0387f41c-f2c6-496f-8ca5-041c0c5dc53d",
+  "testcase_id": "01M2NSHBEGWFJ6SCTWE4GB9EAD",
+  "executions": [
+    {
+      "execution_id": "1acae346-1127-42ca-80de-25b949b1d6bf",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-09-16T19:06:16.683Z"
+    }
+  ]
+}

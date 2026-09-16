@@ -1,0 +1,18 @@
+{
+  "test_id": "1114b3cd-b50e-4651-9a21-e73c4a7fb89a",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "paris-to-cairo-search-shows-exact-observed-route-text-and",
+  "commit_id": "a0c192a1-99f3-4ec9-b13c-2171869c68cf",
+  "testcase_id": "01M2NQS9XV796HG1XDWTXA7YTW",
+  "executions": [
+    {
+      "execution_id": "ddb6fd4c-0ac4-4d10-bcfc-a6b796b4b16c",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-16T18:36:08.491Z"
+    }
+  ]
+}

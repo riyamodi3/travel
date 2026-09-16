@@ -1,0 +1,18 @@
+{
+  "test_id": "ed3e05a0-3da4-4a63-8210-06aa1aef7661",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "american-express-purchase-from-the-observed-paris-to-cairo",
+  "commit_id": "4efb8dad-4759-411d-9d85-dfdbc8fd4add",
+  "testcase_id": "01M2NSAHW1SYB3G4SCZWZYT487",
+  "executions": [
+    {
+      "execution_id": "5de4cc4e-4a5c-40e7-8e97-ad282dd84226",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-09-16T19:01:38.664Z"
+    }
+  ]
+}

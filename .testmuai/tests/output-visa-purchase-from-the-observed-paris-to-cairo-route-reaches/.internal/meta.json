@@ -1,0 +1,18 @@
+{
+  "test_id": "f38fa545-6603-498b-a916-405fd3817d18",
+  "project_id": "01M22V7B752RPANQ5KK3HG3F62",
+  "folder_id": "01M22V7JGB0MA25GNBMVXDXSNR",
+  "org_id": "588659",
+  "session_name": "visa-purchase-from-the-observed-paris-to-cairo-route-reaches",
+  "commit_id": "4a9095ea-29e2-4bfc-a0ec-c8c6ecc24997",
+  "testcase_id": "01M2NS3R5R6BBWNBZ4PTYHZVXP",
+  "executions": [
+    {
+      "execution_id": "3d0199eb-54f0-45e7-8800-56117e956363",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-09-16T18:57:56.141Z"
+    }
+  ]
+}

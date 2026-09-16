@@ -1,18 +1,18 @@
 {
+  "commit_id": "d8494866-37a1-48b9-8068-9dc54a5646d3",
   "test_id": "af2ddde7-66b2-4e81-b080-aff68fb63670",
+  "testcase_id": "01M2NBPCS12BW8SBAVB71ABAKV",
   "project_id": "01M27KT6B6V7DCNC8N98FE2B4D",
   "folder_id": "01M27M16Y326CQAC728RMPWQZ1",
   "org_id": "588659",
   "session_name": "search-available-flights-for-an-allowed-city-pair-from-the",
-  "commit_id": "d8494866-37a1-48b9-8068-9dc54a5646d3",
-  "testcase_id": "01M2NBPCS12BW8SBAVB71ABAKV",
   "executions": [
     {
-      "execution_id": "25f9237c-4cf9-4164-8418-ace343a065f3",
+      "execution_id": "ba9e28ca-6a08-41f8-aa07-c11cd3647a72",
       "run_kind": "author",
       "status": "failed",
       "valid": true,
-      "at": "2026-09-16T15:04:39.438Z"
+      "at": "2026-09-16T16:48:49.248Z"
     }
   ]
 }

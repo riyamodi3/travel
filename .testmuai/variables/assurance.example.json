@@ -1,0 +1,47 @@
+{
+  "purchase_name_on_card": {
+    "value": "Test User",
+    "secret": false,
+    "description": "Cardholder name to submit on the purchase form in booking tests."
+  },
+  "purchase_address": {
+    "value": "123 Test Street",
+    "secret": false,
+    "description": "Street address to submit on the purchase form in booking tests."
+  },
+  "purchase_city": {
+    "value": "Testville",
+    "secret": false,
+    "description": "City to submit on the purchase form in booking tests."
+  },
+  "purchase_state": {
+    "value": "CA",
+    "secret": false,
+    "description": "State to submit on the purchase form in booking tests."
+  },
+  "purchase_zip_code": {
+    "value": "94000",
+    "secret": false,
+    "description": "Zip code to submit on the purchase form in booking tests."
+  },
+  "purchase_card_number_visa": {
+    "value": "4111111111111111",
+    "secret": true,
+    "description": "Visa card number to submit on the purchase form in booking tests. Standard test/dummy card number, not a real payment instrument."
+  },
+  "purchase_card_number_amex": {
+    "value": "378282246310005",
+    "secret": true,
+    "description": "American Express card number to submit on the purchase form in booking tests. Standard test/dummy card number, not a real payment instrument."
+  },
+  "purchase_card_month": {
+    "value": "12",
+    "secret": false,
+    "description": "Card expiration month to submit on the purchase form in booking tests."
+  },
+  "purchase_card_year": {
+    "value": "2030",
+    "secret": false,
+    "description": "Card expiration year to submit on the purchase form in booking tests."
+  }
+}

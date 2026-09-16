@@ -1,0 +1,217 @@
+# Travel Riya — Kane CLI Assurance Exercise
+
+This repository demonstrates the Kane CLI Assurance + Evidence lifecycle against a public airline/travel booking demo site.
+
+Application under test:
+https://blazedemo.com
+
+## Learning objective
+
+Demonstrate this lifecycle:
+
+Requirement → Use Case → Acceptance Criteria → Scenario → test.md → Execution → Evidence → Coverage
+
+## Repository layout
+
+```text
+Travel_Riya/
+├── .github/
+│   └── workflows/
+│       └── travel_riya-assurance.yml
+├── requirements/
+│   └── travel_riya_requirements.md
+├── .testmuai/
+│   └── tests/
+│       ├── search-available-flights-for-an-allowed-city-pair-from-the_test.md
+│       ├── complete-a-selected-flight-purchase-from-results-to_test.md
+│       └── complete-a-later-flight-purchase-after-a-prior-booking-and_test.md
+├── evidence/
+│   └── latest.evidence
+├── .gitignore
+└── README.md
+```
+
+## Important design decision
+
+The assurance design phase is intentionally performed by a human on a workstation:
+
+1. Ingest the requirements.
+2. Extract use cases.
+3. Review and trust the proposed use cases.
+4. Design tests.
+5. Review the generated acceptance criteria, scenarios and tests.
+6. Commit the reviewed `_test.md` files.
+
+GitHub Actions then performs the repeatable execution phase:
+
+1. Install Kane CLI.
+2. Authenticate using GitHub Secrets.
+3. Run the committed `_test.md` suite.
+4. Validate the generated evidence pack.
+5. Upload the evidence and reports as workflow artifacts.
+
+This avoids treating the `.context/` assurance store as a Git-mergeable artifact. The Kane CLI documentation describes `.context/` as append-only and single-writer, and recommends keeping it out of Git merges.
+
+## Prerequisites
+
+- TestMu AI account with Kane CLI access.
+- TestMu AI username and access key.
+- Node.js 18+.
+- Google Chrome for local execution.
+- Git and GitHub access.
+
+Install Kane CLI:
+
+```bash
+npm install -g @testmuai/kane-cli
+```
+
+Verify:
+
+```bash
+kane-cli --version
+```
+
+Use Kane CLI 0.6.1 or later for the assurance commands.
+
+## Phase 1 — Local assurance design
+
+From the repository root:
+
+```bash
+kane-cli login
+```
+
+For a non-interactive login you can use:
+
+```bash
+kane-cli login --username "<username>" --access-key "<access-key>"
+```
+
+### 1. Ingest requirements
+
+```bash
+kane-cli context ingest ./requirements/travel_riya_requirements.md --mode agent
+```
+
+This snapshots the requirement document into the local assurance store and proposes use cases in the same flow (kane-cli 0.7.1+).
+
+### 2. Review the proposed use cases
+
+```bash
+kane-cli context review
+```
+
+Against `travel_riya_requirements.md` this proposes two use cases: searching for available flights, and purchasing a selected flight. Promote the useful ones to trusted; edit or reject proposals where appropriate.
+
+### 3. Design tests
+
+For each trusted use case:
+
+```bash
+kane-cli design tests --use-case <USE_CASE_ID> --mode agent --max 8
+```
+
+Review the generated acceptance criteria, scenarios and `_test.md` files. The `.testmuai/tests/` directory in this repository holds the reviewed test artifacts that are actually committed and run in CI — that's the kane-cli default output location, not a manually curated copy.
+
+### 4. Review the design
+
+```bash
+kane-cli context review
+```
+
+Do not skip this step. The generated design is also derived content and should be reviewed before becoming part of the trusted test suite.
+
+### 5. Supply runtime test data
+
+The purchase-flow tests declare `{{purchase_*}}` variables (name, address, city/state/zip, dummy Visa/Amex card numbers, expiration) since BlazeDemo's purchase form takes free-text checkout details with no real payment processing. Fill `.testmuai/variables/assurance.json` with safe placeholder values before authoring/running those tests.
+
+## Phase 2 — Local execution
+
+First list the tests:
+
+```bash
+kane-cli testmd list
+```
+
+Author/run one test (first execution of a freshly designed test happens in a real browser):
+
+```bash
+kane-cli testmd run ./.testmuai/tests/search-available-flights-for-an-allowed-city-pair-from-the_test.md --agent --headless
+```
+
+Run the full suite:
+
+```bash
+kane-cli testrun run \
+  --headless \
+  --on-failure fail-fast
+```
+
+A batch `testrun` produces one sealed evidence pack for the suite.
+
+## Phase 3 — Inspect evidence
+
+After a run, look under:
+
+```text
+.testmuai/evidence/
+```
+
+Validate the pack:
+
+```bash
+kane-cli evidence validate .testmuai/evidence/<execution-id>.evidence --json
+```
+
+Serve it locally if you want to inspect it in the evidence viewer:
+
+```bash
+kane-cli evidence serve .testmuai/evidence/<execution-id>.evidence
+```
+
+The evidence pack contains the test definitions, results, screenshots, console/network logs and failure information.
+
+`.testmuai/evidence/` itself is gitignored — kane-cli names each pack with a random execution id, so it's not something to commit as-is. CI copies the latest pack to `evidence/latest.evidence` (a fixed, non-ignored path, overwritten every run) and commits it, so the most recent run's full evidence is always in the repo without the history growing unbounded. Open it locally after pulling:
+
+```bash
+kane-cli evidence serve evidence/latest.evidence
+```
+
+## Phase 4 — GitHub Actions
+
+Create the following GitHub repository secrets:
+
+- `LT_USERNAME`
+- `LT_ACCESS_KEY`
+- `PURCHASE_CARD_NUMBER_VISA` (dummy value, e.g. `4111111111111111`)
+- `PURCHASE_CARD_NUMBER_AMEX` (dummy value, e.g. `378282246310005`)
+
+Optionally set repository variables to override the non-secret purchase fields (`PURCHASE_NAME_ON_CARD`, `PURCHASE_ADDRESS`, `PURCHASE_CITY`, `PURCHASE_STATE`, `PURCHASE_ZIP_CODE`, `PURCHASE_CARD_MONTH`, `PURCHASE_CARD_YEAR`) — sane placeholder defaults are baked into the workflow.
+
+Then push the repository.
+
+The workflow in `.github/workflows/travel_riya-assurance.yml`:
+
+1. Checks out the repository.
+2. Installs Node.js.
+3. Installs Kane CLI.
+4. Logs into TestMu AI using GitHub Secrets.
+5. Runs the committed Travel Riya tests in headless mode.
+6. Validates the generated evidence pack.
+7. Commits the pack to `evidence/latest.evidence` (skipped on `pull_request` runs — see the workflow file's comment on why).
+8. Writes pass/fail totals and the evidence pack id to the run's Step Summary.
+9. Uploads evidence, `Result.md` files, test outputs, and the raw NDJSON logs as workflow artifacts.
+
+## Suggested training discussion
+
+Ask the trainees:
+
+1. Which requirement does this test prove?
+2. Which acceptance criteria are covered?
+3. What evidence proves the criterion?
+4. If the test fails, is the product wrong or is the environment broken?
+5. What remains unverified?
+6. What happens to the suite if the requirement changes?
+
+That is the core Assurance + Evidence lesson.
